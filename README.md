@@ -1,7 +1,7 @@
 **Run Example Test:**
 ```
 docker run -it \
-    -v $(pwd)/example.robot:/tests/example.robot:ro \
+    -v $(pwd)/tests:/tests:ro \
     -v $(pwd)/out:/out:rw \
       --outputdir /out /tests
 ```
