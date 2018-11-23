@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181123 13:03:49.609" generator="Robot 3.0.2 (Python 2.7.15 on linux2)">
+<suite source="/tests" id="s1" name="Tests">
+<suite source="/tests/sanity_checks.robot" id="s1-s1" name="Sanity Checks">
+<test id="s1-s1-t1" name="Robot Framework is ran inside the container">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\n\nHello from a Docker container, using keyword Log To Console!\n</arg>
+</arguments>
+<status status="PASS" endtime="20181123 13:03:49.646" starttime="20181123 13:03:49.645"></status>
+</kw>
+<status status="PASS" endtime="20181123 13:03:49.646" critical="yes" starttime="20181123 13:03:49.644"></status>
+</test>
+<status status="PASS" endtime="20181123 13:03:49.648" starttime="20181123 13:03:49.640"></status>
+</suite>
+<suite source="/tests/selenium_example.robot" id="s1-s2" name="Selenium Example">
+<test id="s1-s2-t1" name="Google And Find BBC">
+<kw name="Open Browser To Google">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>https://www.google.co.uk</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20181123 13:03:49.825" level="INFO">Opening browser 'chrome' to base url 'https://www.google.co.uk'</msg>
+<status status="PASS" endtime="20181123 13:03:52.929" starttime="20181123 13:03:49.825"></status>
+</kw>
+<kw name="Google Should Be Open">
+<kw name="Location Should Contain" library="Selenium2Library">
+<doc>Verifies that current URL contains `expected`.</doc>
+<arguments>
+<arg>www.google.co.uk</arg>
+</arguments>
+<msg timestamp="20181123 13:03:52.942" level="INFO">Current location contains 'www.google.co.uk'.</msg>
+<status status="PASS" endtime="20181123 13:03:52.942" starttime="20181123 13:03:52.930"></status>
+</kw>
+<status status="PASS" endtime="20181123 13:03:52.943" starttime="20181123 13:03:52.929"></status>
+</kw>
+<status status="PASS" endtime="20181123 13:03:52.943" starttime="20181123 13:03:49.824"></status>
+</kw>
+<kw name="Search For bbc">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>q</arg>
+<arg>bbc</arg>
+</arguments>
+<msg timestamp="20181123 13:03:52.945" level="INFO">Typing text 'bbc' into text field 'q'</msg>
+<status status="PASS" endtime="20181123 13:03:53.096" starttime="20181123 13:03:52.944"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>q</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20181123 13:03:54.777" starttime="20181123 13:03:53.097"></status>
+</kw>
+<status status="PASS" endtime="20181123 13:03:54.777" starttime="20181123 13:03:52.944"></status>
+</kw>
+<kw name="Result Should Contain bbc">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>www.bbc.co.uk</arg>
+<arg>10 s</arg>
+</arguments>
+<status status="PASS" endtime="20181123 13:03:54.831" starttime="20181123 13:03:54.778"></status>
+</kw>
+<status status="PASS" endtime="20181123 13:03:54.832" starttime="20181123 13:03:54.778"></status>
+</kw>
+<status status="PASS" endtime="20181123 13:03:54.833" critical="yes" starttime="20181123 13:03:49.822"></status>
+</test>
+<status status="PASS" endtime="20181123 13:03:54.837" starttime="20181123 13:03:49.650"></status>
+</suite>
+<status status="PASS" endtime="20181123 13:03:54.841" starttime="20181123 13:03:49.612"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="2">Tests</stat>
+<stat fail="0" id="s1-s1" name="Sanity Checks" pass="1">Tests.Sanity Checks</stat>
+<stat fail="0" id="s1-s2" name="Selenium Example" pass="1">Tests.Selenium Example</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

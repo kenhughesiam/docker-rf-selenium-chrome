@@ -1,0 +1,7 @@
+selenium
+robotframework
+robotframework-selenium2library
+robotframework-ExtendedRequestsLibrary
+robotframework-Requests
+#robotframework-selenium2library==1.8.0
+#selenium==3.3.1
